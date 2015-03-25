@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ARFLibrary.h"
+#import "ARFLIbraryViewController.h"
 
 
 @interface AppDelegate ()
@@ -22,10 +23,11 @@
     
     
     
-    ARFLibrary *library = [ARFLibrary sharedLibrary];
-    [library donwloadBooks];
-    
-    
+
+
+    ARFLIbraryViewController *libraryVC = [[ARFLIbraryViewController alloc] initWithNibName:NSStringFromClass([ARFLIbraryViewController class]) bundle:nil];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:libraryVC];
+    self.window.rootViewController = navVC;
     
     
     // Override point for customization after application launch.

@@ -9,7 +9,7 @@
 #import "ARFLibrary.h"
 #import "ARFBooksApiClient.h"
 #import "ARFConstants.h"
-#import "ARFBook.h"
+
 
 @interface ARFLibrary()
 
@@ -30,14 +30,16 @@
     return sharedLibrary;
 }
 
--(void) donwloadBooks{
+-(void) donwloadBooksWithSuccess:(void (^)(NSArray * books))successBlock
+                         failure:(void (^)(NSString *apiError))failureBlock{
     
     //Acá se debe llamar un método que se encarga de la descarga de los libros y devuelve un bloque. En caso exitoso se retorna YES, de lo contrario NO;
     
     [ARFBooksApiClient requestBooksWithURL:kBooksUrl withSuccess:^(NSArray *books) {
+        successBlock(books);
         self.books = books;
     } withFailure:^(NSString *error) {
-
+        failureBlock(error);
     }];
 }
 

@@ -7,12 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ARFBook.h"
 
 @interface ARFLibrary : NSObject
 
 
 +(id)sharedLibrary;
 
--(void) donwloadBooks;
+-(void) donwloadBooksWithSuccess:(void (^)(NSArray * books))successBlock
+                         failure:(void (^)(NSString *error))failureBlock;
+
+-(NSArray *) libraryBooks;
+-(NSUInteger) bookCount;
+-(NSArray *) tags;
+-(NSUInteger) bookCountForTag:(NSString *) tag;
+-(NSArray *) booksForTag:(NSString *) tag;
+-(ARFBook *) bookForTag:(NSString *) tag atIndex:(NSUInteger) index;
+
 
 @end

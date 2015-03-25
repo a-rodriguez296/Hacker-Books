@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3572B6AC1AC336750035DC63 /* ARFBook+Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3572B6AB1AC336750035DC63 /* ARFBook+Parse.m */; };
+		3572B6B11AC37A7E0035DC63 /* ARFLIbraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3572B6AF1AC37A7E0035DC63 /* ARFLIbraryViewController.m */; };
+		3572B6B21AC37A7E0035DC63 /* ARFLIbraryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3572B6B01AC37A7E0035DC63 /* ARFLIbraryViewController.xib */; };
+		3572B6B81AC37CDA0035DC63 /* ARFBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3572B6B61AC37CDA0035DC63 /* ARFBookCell.m */; };
+		3572B6B91AC37CDA0035DC63 /* ARFBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3572B6B71AC37CDA0035DC63 /* ARFBookCell.xib */; };
 		35BA7F341AC25D9E00BE56AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BA7F331AC25D9E00BE56AC /* main.m */; };
 		35BA7F371AC25D9E00BE56AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BA7F361AC25D9E00BE56AC /* AppDelegate.m */; };
 		35BA7F391AC25D9E00BE56AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35BA7F381AC25D9E00BE56AC /* Images.xcassets */; };
@@ -32,6 +36,12 @@
 /* Begin PBXFileReference section */
 		3572B6AA1AC336750035DC63 /* ARFBook+Parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ARFBook+Parse.h"; sourceTree = "<group>"; };
 		3572B6AB1AC336750035DC63 /* ARFBook+Parse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ARFBook+Parse.m"; sourceTree = "<group>"; };
+		3572B6AE1AC37A7E0035DC63 /* ARFLIbraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARFLIbraryViewController.h; sourceTree = "<group>"; };
+		3572B6AF1AC37A7E0035DC63 /* ARFLIbraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARFLIbraryViewController.m; sourceTree = "<group>"; };
+		3572B6B01AC37A7E0035DC63 /* ARFLIbraryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARFLIbraryViewController.xib; sourceTree = "<group>"; };
+		3572B6B51AC37CDA0035DC63 /* ARFBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARFBookCell.h; sourceTree = "<group>"; };
+		3572B6B61AC37CDA0035DC63 /* ARFBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARFBookCell.m; sourceTree = "<group>"; };
+		3572B6B71AC37CDA0035DC63 /* ARFBookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARFBookCell.xib; sourceTree = "<group>"; };
 		35BA7F2E1AC25D9E00BE56AC /* Hacker Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BA7F321AC25D9E00BE56AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35BA7F331AC25D9E00BE56AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -91,6 +101,35 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		3572B6B31AC37A8C0035DC63 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3572B6B41AC37A9B0035DC63 /* Library */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3572B6B41AC37A9B0035DC63 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				3572B6AE1AC37A7E0035DC63 /* ARFLIbraryViewController.h */,
+				3572B6AF1AC37A7E0035DC63 /* ARFLIbraryViewController.m */,
+				3572B6B01AC37A7E0035DC63 /* ARFLIbraryViewController.xib */,
+				3572B6BA1AC37CE30035DC63 /* Book Cell */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		3572B6BA1AC37CE30035DC63 /* Book Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3572B6B51AC37CDA0035DC63 /* ARFBookCell.h */,
+				3572B6B61AC37CDA0035DC63 /* ARFBookCell.m */,
+				3572B6B71AC37CDA0035DC63 /* ARFBookCell.xib */,
+			);
+			name = "Book Cell";
+			sourceTree = "<group>";
+		};
 		35BA7F251AC25D9E00BE56AC = {
 			isa = PBXGroup;
 			children = (
@@ -114,10 +153,11 @@
 		35BA7F301AC25D9E00BE56AC /* Hacker Books */ = {
 			isa = PBXGroup;
 			children = (
-				35BA7F5E1AC2646300BE56AC /* Network */,
 				35BA7F5A1AC2626100BE56AC /* Utils */,
-				35BA7F581AC25EB400BE56AC /* Services */,
+				35BA7F5E1AC2646300BE56AC /* Network */,
 				35BA7F541AC25DE400BE56AC /* Data */,
+				35BA7F581AC25EB400BE56AC /* Services */,
+				3572B6B31AC37A8C0035DC63 /* Controllers */,
 				35BA7F351AC25D9E00BE56AC /* AppDelegate.h */,
 				35BA7F361AC25D9E00BE56AC /* AppDelegate.m */,
 				35BA7F381AC25D9E00BE56AC /* Images.xcassets */,
@@ -279,6 +319,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3572B6B91AC37CDA0035DC63 /* ARFBookCell.xib in Resources */,
+				3572B6B21AC37A7E0035DC63 /* ARFLIbraryViewController.xib in Resources */,
 				35BA7F3C1AC25D9E00BE56AC /* LaunchScreen.xib in Resources */,
 				35BA7F391AC25D9E00BE56AC /* Images.xcassets in Resources */,
 			);
@@ -331,9 +373,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3572B6B11AC37A7E0035DC63 /* ARFLIbraryViewController.m in Sources */,
 				35BA7F531AC25DDC00BE56AC /* ARFBook.m in Sources */,
 				35BA7F571AC25E9E00BE56AC /* ARFLibrary.m in Sources */,
 				35BA7F371AC25D9E00BE56AC /* AppDelegate.m in Sources */,
+				3572B6B81AC37CDA0035DC63 /* ARFBookCell.m in Sources */,
 				35BA7F341AC25D9E00BE56AC /* main.m in Sources */,
 				3572B6AC1AC336750035DC63 /* ARFBook+Parse.m in Sources */,
 				35BA7F5D1AC2645900BE56AC /* ARFBooksApiClient.m in Sources */,
