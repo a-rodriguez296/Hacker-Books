@@ -12,6 +12,10 @@
 		35BA7F391AC25D9E00BE56AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35BA7F381AC25D9E00BE56AC /* Images.xcassets */; };
 		35BA7F3C1AC25D9E00BE56AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35BA7F3A1AC25D9E00BE56AC /* LaunchScreen.xib */; };
 		35BA7F481AC25D9E00BE56AC /* Hacker_BooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BA7F471AC25D9E00BE56AC /* Hacker_BooksTests.m */; };
+		35BA7F531AC25DDC00BE56AC /* ARFBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BA7F521AC25DDC00BE56AC /* ARFBook.m */; };
+		35BA7F571AC25E9E00BE56AC /* ARFLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BA7F561AC25E9E00BE56AC /* ARFLibrary.m */; };
+		35BA7F5D1AC2645900BE56AC /* ARFBooksApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BA7F5C1AC2645900BE56AC /* ARFBooksApiClient.m */; };
+		B4B11F85A52893CDE63C1751 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D530F298614CBB44724B86AF /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,16 @@
 		35BA7F411AC25D9E00BE56AC /* Hacker BooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hacker BooksTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BA7F461AC25D9E00BE56AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35BA7F471AC25D9E00BE56AC /* Hacker_BooksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hacker_BooksTests.m; sourceTree = "<group>"; };
+		35BA7F511AC25DDC00BE56AC /* ARFBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARFBook.h; sourceTree = "<group>"; };
+		35BA7F521AC25DDC00BE56AC /* ARFBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARFBook.m; sourceTree = "<group>"; };
+		35BA7F551AC25E9E00BE56AC /* ARFLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARFLibrary.h; sourceTree = "<group>"; };
+		35BA7F561AC25E9E00BE56AC /* ARFLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARFLibrary.m; sourceTree = "<group>"; };
+		35BA7F591AC2620F00BE56AC /* ARFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARFConstants.h; sourceTree = "<group>"; };
+		35BA7F5B1AC2645900BE56AC /* ARFBooksApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARFBooksApiClient.h; sourceTree = "<group>"; };
+		35BA7F5C1AC2645900BE56AC /* ARFBooksApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARFBooksApiClient.m; sourceTree = "<group>"; };
+		5CBB9A60F0428F2AF449E6DD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D530F298614CBB44724B86AF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA9925D88712C46A15C7EAF2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4B11F85A52893CDE63C1751 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,12 +70,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01252004A7BFFEA28F282089 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5CBB9A60F0428F2AF449E6DD /* Pods.debug.xcconfig */,
+				EA9925D88712C46A15C7EAF2 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		35BA7F251AC25D9E00BE56AC = {
 			isa = PBXGroup;
 			children = (
 				35BA7F301AC25D9E00BE56AC /* Hacker Books */,
 				35BA7F441AC25D9E00BE56AC /* Hacker BooksTests */,
 				35BA7F2F1AC25D9E00BE56AC /* Products */,
+				01252004A7BFFEA28F282089 /* Pods */,
+				66B2CE2C4D83D28C4D749C07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +102,10 @@
 		35BA7F301AC25D9E00BE56AC /* Hacker Books */ = {
 			isa = PBXGroup;
 			children = (
+				35BA7F5E1AC2646300BE56AC /* Network */,
+				35BA7F5A1AC2626100BE56AC /* Utils */,
+				35BA7F581AC25EB400BE56AC /* Services */,
+				35BA7F541AC25DE400BE56AC /* Data */,
 				35BA7F351AC25D9E00BE56AC /* AppDelegate.h */,
 				35BA7F361AC25D9E00BE56AC /* AppDelegate.m */,
 				35BA7F381AC25D9E00BE56AC /* Images.xcassets */,
@@ -111,6 +141,49 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		35BA7F541AC25DE400BE56AC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				35BA7F511AC25DDC00BE56AC /* ARFBook.h */,
+				35BA7F521AC25DDC00BE56AC /* ARFBook.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		35BA7F581AC25EB400BE56AC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				35BA7F551AC25E9E00BE56AC /* ARFLibrary.h */,
+				35BA7F561AC25E9E00BE56AC /* ARFLibrary.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		35BA7F5A1AC2626100BE56AC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				35BA7F591AC2620F00BE56AC /* ARFConstants.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		35BA7F5E1AC2646300BE56AC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				35BA7F5B1AC2645900BE56AC /* ARFBooksApiClient.h */,
+				35BA7F5C1AC2645900BE56AC /* ARFBooksApiClient.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		66B2CE2C4D83D28C4D749C07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D530F298614CBB44724B86AF /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35BA7F4B1AC25D9E00BE56AC /* Build configuration list for PBXNativeTarget "Hacker Books" */;
 			buildPhases = (
+				C2A4A7EAAF3C0CFC137F0BF7 /* Check Pods Manifest.lock */,
 				35BA7F2A1AC25D9E00BE56AC /* Sources */,
 				35BA7F2B1AC25D9E00BE56AC /* Frameworks */,
 				35BA7F2C1AC25D9E00BE56AC /* Resources */,
+				813EA79BC5E2E7AF05DB89E8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,13 +280,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		813EA79BC5E2E7AF05DB89E8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2A4A7EAAF3C0CFC137F0BF7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		35BA7F2A1AC25D9E00BE56AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35BA7F531AC25DDC00BE56AC /* ARFBook.m in Sources */,
+				35BA7F571AC25E9E00BE56AC /* ARFLibrary.m in Sources */,
 				35BA7F371AC25D9E00BE56AC /* AppDelegate.m in Sources */,
 				35BA7F341AC25D9E00BE56AC /* main.m in Sources */,
+				35BA7F5D1AC2645900BE56AC /* ARFBooksApiClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +436,7 @@
 		};
 		35BA7F4C1AC25D9E00BE56AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CBB9A60F0428F2AF449E6DD /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Hacker Books/Info.plist";
@@ -335,6 +447,7 @@
 		};
 		35BA7F4D1AC25D9E00BE56AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA9925D88712C46A15C7EAF2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Hacker Books/Info.plist";
@@ -396,6 +509,7 @@
 				35BA7F4D1AC25D9E00BE56AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35BA7F4E1AC25D9E00BE56AC /* Build configuration list for PBXNativeTarget "Hacker BooksTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +518,7 @@
 				35BA7F501AC25D9E00BE56AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
