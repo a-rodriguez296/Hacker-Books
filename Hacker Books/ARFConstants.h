@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Alejandro Rodriguez. All rights reserved.
 //
 
-static NSString* const kBooksUrl                      = @"http://mingle.kijiji.ca/api/";
+static NSString* const kBooksUrl                      = @"https://keepcodigtest.blob.core.windows.net/containerblobstest/books_readable.json";
 
 
 

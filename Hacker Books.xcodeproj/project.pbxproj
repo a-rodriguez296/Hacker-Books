@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3572B6AC1AC336750035DC63 /* ARFBook+Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3572B6AB1AC336750035DC63 /* ARFBook+Parse.m */; };
 		35BA7F341AC25D9E00BE56AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BA7F331AC25D9E00BE56AC /* main.m */; };
 		35BA7F371AC25D9E00BE56AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BA7F361AC25D9E00BE56AC /* AppDelegate.m */; };
 		35BA7F391AC25D9E00BE56AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35BA7F381AC25D9E00BE56AC /* Images.xcassets */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3572B6AA1AC336750035DC63 /* ARFBook+Parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ARFBook+Parse.h"; sourceTree = "<group>"; };
+		3572B6AB1AC336750035DC63 /* ARFBook+Parse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ARFBook+Parse.m"; sourceTree = "<group>"; };
 		35BA7F2E1AC25D9E00BE56AC /* Hacker Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BA7F321AC25D9E00BE56AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35BA7F331AC25D9E00BE56AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +80,15 @@
 				EA9925D88712C46A15C7EAF2 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3572B6AD1AC3367C0035DC63 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3572B6AA1AC336750035DC63 /* ARFBook+Parse.h */,
+				3572B6AB1AC336750035DC63 /* ARFBook+Parse.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		35BA7F251AC25D9E00BE56AC = {
@@ -144,6 +156,7 @@
 		35BA7F541AC25DE400BE56AC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3572B6AD1AC3367C0035DC63 /* Categories */,
 				35BA7F511AC25DDC00BE56AC /* ARFBook.h */,
 				35BA7F521AC25DDC00BE56AC /* ARFBook.m */,
 			);
@@ -322,6 +335,7 @@
 				35BA7F571AC25E9E00BE56AC /* ARFLibrary.m in Sources */,
 				35BA7F371AC25D9E00BE56AC /* AppDelegate.m in Sources */,
 				35BA7F341AC25D9E00BE56AC /* main.m in Sources */,
+				3572B6AC1AC336750035DC63 /* ARFBook+Parse.m in Sources */,
 				35BA7F5D1AC2645900BE56AC /* ARFBooksApiClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

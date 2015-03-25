@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ARFLibrary.h"
+
 
 @interface AppDelegate ()
 
@@ -17,6 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
+    
+    ARFLibrary *library = [ARFLibrary sharedLibrary];
+    [library donwloadBooks];
+    
+    
+    
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSArray *tagsList;
 @property (nonatomic, strong) NSString *urlImage;
 @property (nonatomic, strong) NSString *urlPDF;
+@property (nonatomic, assign) BOOL isFavorite;
 
 
 @end

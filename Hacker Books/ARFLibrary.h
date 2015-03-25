@@ -13,5 +13,6 @@
 
 +(id)sharedLibrary;
 
+-(void) donwloadBooks;
 
 @end
