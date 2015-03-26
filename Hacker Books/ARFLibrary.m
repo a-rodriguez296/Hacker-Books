@@ -36,8 +36,8 @@
     //Acá se debe llamar un método que se encarga de la descarga de los libros y devuelve un bloque. En caso exitoso se retorna YES, de lo contrario NO;
     
     [ARFBooksApiClient requestBooksWithURL:kBooksUrl withSuccess:^(NSArray *books) {
-        successBlock(books);
         self.books = books;
+        successBlock(books);
     } withFailure:^(NSString *error) {
         failureBlock(error);
     }];
@@ -60,7 +60,7 @@
     for (ARFBook *book in self.books) {
         [self addArrayToArrayWithoutRepetition:book.tagsList anotherArray:responseArray];
     }
-    return [NSArray arrayWithArray:responseArray];
+    return [NSArray arrayWithArray:[responseArray sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]];
 }
 
 
@@ -79,11 +79,15 @@
     
     NSMutableArray *responseArray = [NSMutableArray new];
     for (ARFBook *book in self.books) {
-        if ([book.tagsList containsObject:tag]) {
+        if ([book.tagsList containsObject:tag] && !book.isFavorite) {
             [responseArray addObject:book];
         }
     }
-    return responseArray.count>0?[NSArray arrayWithArray:responseArray]:nil;
+    
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    NSArray *sortedResponseArray = [responseArray sortedArrayUsingDescriptors:@[sort]];
+    
+    return responseArray.count>0?sortedResponseArray:nil;
 }
 
 -(ARFBook *) bookForTag:(NSString *) tag atIndex:(NSUInteger) index{
@@ -95,6 +99,31 @@
     else{
         return booksForTag[index];
     }
+}
+
+-(NSString *) tagForIndex:(NSUInteger) index{
+    return [self tags][index];
+}
+
+
+-(NSArray *) searchBooksWithTitle:(NSString *)title{
+    NSMutableArray *responseArray = [NSMutableArray new];
+    for (ARFBook *book in self.books) {
+        if ([book.title containsString:title]) {
+            [responseArray addObject:book];
+        }
+    }
+    return [NSArray arrayWithArray:responseArray];
+}
+
+-(NSArray *) favoriteBooks{
+    NSMutableArray *responseArray = [NSMutableArray new];
+    for (ARFBook *currentBook in self.books) {
+        if ([currentBook isFavorite]) {
+            [responseArray addObject:currentBook];
+        }
+    }
+    return [NSArray arrayWithArray:responseArray];
 }
 
 

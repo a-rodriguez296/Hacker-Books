@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARFLIbraryViewController">
             <connections>
+                <outlet property="searchDisplayController" destination="aSI-bp-9ff" id="7aE-eZ-Zgi"/>
                 <outlet property="tableView" destination="xqE-D3-14y" id="eZZ-iW-j0a"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,6 +19,14 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="xqE-D3-14y">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="jQV-Gw-XpV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="6RX-VX-V3I"/>
+                        </connections>
+                    </searchBar>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="yWs-dF-y9c"/>
                         <outlet property="delegate" destination="-1" id="vsV-w1-5Ut"/>
@@ -26,11 +35,27 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="xqE-D3-14y" secondAttribute="bottom" id="AjL-DJ-xK1"/>
                 <constraint firstItem="xqE-D3-14y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="MTu-Q7-QHJ"/>
-                <constraint firstItem="xqE-D3-14y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qhl-Nz-c8s"/>
-                <constraint firstAttribute="trailing" secondItem="xqE-D3-14y" secondAttribute="trailing" id="rIz-aa-zcz"/>
+                <constraint firstItem="xqE-D3-14y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WxV-ON-Izd"/>
+                <constraint firstAttribute="bottom" secondItem="xqE-D3-14y" secondAttribute="bottom" id="aLu-2O-KVi"/>
+                <constraint firstAttribute="trailing" secondItem="xqE-D3-14y" secondAttribute="trailing" id="i94-6Y-Fh6"/>
+                <constraint firstItem="xqE-D3-14y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lab-kG-PwA"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="MTu-Q7-QHJ"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="1251" y="429"/>
         </view>
+        <searchDisplayController searchResultsTitle="" id="aSI-bp-9ff">
+            <connections>
+                <outlet property="delegate" destination="-1" id="iiq-2h-OHM"/>
+                <outlet property="searchBar" destination="jQV-Gw-XpV" id="xFI-zB-LKQ"/>
+                <outlet property="searchContentsController" destination="-1" id="37p-1z-N95"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="VC8-HO-sDg"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="OSE-JT-imQ"/>
+            </connections>
+        </searchDisplayController>
     </objects>
 </document>

@@ -23,6 +23,8 @@
 -(NSUInteger) bookCountForTag:(NSString *) tag;
 -(NSArray *) booksForTag:(NSString *) tag;
 -(ARFBook *) bookForTag:(NSString *) tag atIndex:(NSUInteger) index;
-
+-(NSString *) tagForIndex:(NSUInteger) index;
+-(NSArray *) searchBooksWithTitle:(NSString *)title;
+-(NSArray *) favoriteBooks;
 
 @end

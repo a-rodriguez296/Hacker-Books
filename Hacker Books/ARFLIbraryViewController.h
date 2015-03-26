@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARFCellDelegate.h"
 
-@interface ARFLIbraryViewController : UIViewController 
+@interface ARFLIbraryViewController : UIViewController <UISearchBarDelegate,UISearchDisplayDelegate,ARFCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

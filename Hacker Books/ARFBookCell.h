@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARFCellDelegate.h"
 
 @interface ARFBookCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblAuthor;
+@property (weak, nonatomic) IBOutlet UIButton *btnFavorite;
+
+@property (nonatomic, weak) id<ARFCellDelegate> delegate;
+
+
+
 
 @end

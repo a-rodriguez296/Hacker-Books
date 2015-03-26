@@ -20,4 +20,9 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)onTouchFavorite:(id)sender {
+    if (self.delegate) {
+        [self.delegate didSelectView:sender];
+    }
+}
 @end
