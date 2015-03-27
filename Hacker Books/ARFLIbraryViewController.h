@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ARFCellDelegate.h"
+#import "ARFBook.h"
+#import "ARFBookCell.h"
+#import "ARFLibrary.h"
 
-@interface ARFLIbraryViewController : UIViewController <UISearchBarDelegate,UISearchDisplayDelegate,ARFCellDelegate>
+static NSString * const cellIdentifier = @"Cell";
+static const NSUInteger favoritesSection = 0;
+
+@interface ARFLIbraryViewController : UIViewController <UISearchBarDelegate,UISearchDisplayDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+-(NSIndexPath *) indexPathWithSender:(UIView *) view;
 
 @end

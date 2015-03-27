@@ -13,7 +13,15 @@
 
 @interface ARFLibrary()
 
-@property(nonatomic, strong) NSArray * books;
+//Entire Book list
+@property(nonatomic, strong) NSMutableArray * tagListbooks;
+
+
+//Sorted list by title
+@property (nonatomic, strong) NSArray *sortedBooks;
+
+
+@property (nonatomic, strong) NSMutableArray *favoriteBooksa;
 
 @end
 
@@ -36,7 +44,7 @@
     //Acá se debe llamar un método que se encarga de la descarga de los libros y devuelve un bloque. En caso exitoso se retorna YES, de lo contrario NO;
     
     [ARFBooksApiClient requestBooksWithURL:kBooksUrl withSuccess:^(NSArray *books) {
-        self.books = books;
+        self.tagListbooks = [NSMutableArray arrayWithArray:books];
         successBlock(books);
     } withFailure:^(NSString *error) {
         failureBlock(error);
@@ -45,19 +53,19 @@
 
 
 -(NSArray *) libraryBooks{
-    return self.books;
+    return self.tagListbooks;
 }
 
 
 -(NSUInteger) bookCount{
-    return self.books.count;
+    return self.tagListbooks.count;
 }
 
 
 -(NSArray *) tags{
     
     NSMutableArray *responseArray = [NSMutableArray new];
-    for (ARFBook *book in self.books) {
+    for (ARFBook *book in self.tagListbooks) {
         [self addArrayToArrayWithoutRepetition:book.tagsList anotherArray:responseArray];
     }
     return [NSArray arrayWithArray:[responseArray sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]];
@@ -67,7 +75,7 @@
 -(NSUInteger) bookCountForTag:(NSString *) tag{
     
     NSUInteger response = 0;
-    for (ARFBook *book in self.books) {
+    for (ARFBook *book in self.tagListbooks) {
         if ([book.tagsList containsObject:tag]) {
             response++;
         }
@@ -78,7 +86,7 @@
 -(NSArray *) booksForTag:(NSString *) tag{
     
     NSMutableArray *responseArray = [NSMutableArray new];
-    for (ARFBook *book in self.books) {
+    for (ARFBook *book in self.tagListbooks) {
         if ([book.tagsList containsObject:tag] && !book.isFavorite) {
             [responseArray addObject:book];
         }
@@ -108,22 +116,43 @@
 
 -(NSArray *) searchBooksWithTitle:(NSString *)title{
     NSMutableArray *responseArray = [NSMutableArray new];
-    for (ARFBook *book in self.books) {
+    for (ARFBook *book in self.tagListbooks) {
         if ([book.title containsString:title]) {
             [responseArray addObject:book];
         }
     }
+    self.sortedBooks = [NSArray arrayWithArray:responseArray];
     return [NSArray arrayWithArray:responseArray];
 }
 
+-(NSArray *) sortedBooksWithTitle{
+    return self.sortedBooks;
+}
+
 -(NSArray *) favoriteBooks{
-    NSMutableArray *responseArray = [NSMutableArray new];
-    for (ARFBook *currentBook in self.books) {
-        if ([currentBook isFavorite]) {
-            [responseArray addObject:currentBook];
+    
+    if (self.favoriteBooksa == nil) {
+        NSMutableArray *responseArray = [NSMutableArray new];
+        for (ARFBook *currentBook in self.tagListbooks) {
+            if ([currentBook isFavorite]) {
+                [responseArray addObject:currentBook];
+            }
         }
+        self.favoriteBooksa =responseArray;
+        return responseArray;
     }
-    return [NSArray arrayWithArray:responseArray];
+    else{
+        return self.favoriteBooksa;
+    }
+}
+
+
+
+-(void) markBookFromAlphList:(ARFBook *) book{
+    
+//    self.favoriteBooks
+    [self.favoriteBooksa addObject:book];
+    [self.tagListbooks removeObject:book];
 }
 
 

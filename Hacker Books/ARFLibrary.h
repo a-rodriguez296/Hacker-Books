@@ -25,6 +25,9 @@
 -(ARFBook *) bookForTag:(NSString *) tag atIndex:(NSUInteger) index;
 -(NSString *) tagForIndex:(NSUInteger) index;
 -(NSArray *) searchBooksWithTitle:(NSString *)title;
+-(NSArray *) sortedBooksWithTitle;
 -(NSArray *) favoriteBooks;
+//-(void) markBookFromFavoriteList:(ARFBook *) book;
+-(void) markBookFromAlphList:(ARFBook *) book;
 
 @end
