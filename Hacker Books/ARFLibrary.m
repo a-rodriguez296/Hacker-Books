@@ -150,9 +150,13 @@
 
 -(void) markBookFromAlphList:(ARFBook *) book{
     
-//    self.favoriteBooks
     [self.favoriteBooksa addObject:book];
     [self.tagListbooks removeObject:book];
+}
+
+-(void) markBookFromFavoriteList:(ARFBook *) book{
+    [self.favoriteBooksa removeObject:book];
+    [self.tagListbooks addObject:book];
 }
 
 
