@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ARFBook.h"
+#import "ARFConstants.h"
 
 @interface ARFLibrary : NSObject
 
@@ -26,8 +27,8 @@
 -(NSString *) tagForIndex:(NSUInteger) index;
 -(NSArray *) searchBooksWithTitle:(NSString *)title;
 -(NSArray *) sortedBooksWithTitle;
--(NSArray *) favoriteBooks;
--(void) markBookFromFavoriteList:(ARFBook *) book;
--(void) markBookFromAlphList:(ARFBook *) book;
+-(NSArray *) getFavoriteBooks;
+-(void) markBookFromFavoriteList:(ARFBook *) book withNotificationOptions:(ARFNotificationOptions) option;
+-(void) markBookFromAlphList:(ARFBook *) book withNotificationOptions:(ARFNotificationOptions) option;
 
 @end

@@ -7,8 +7,13 @@
 //
 
 static NSString* const kBooksUrl                      = @"https://keepcodigtest.blob.core.windows.net/containerblobstest/books_readable.json";
+static NSString *const kDidMarkBookNotification = @"didMarkBook";
 
 
+typedef enum{
+    ARFNeedsToBeNotified,
+    ARFDoesntNeedToBeNotified
 
+} ARFNotificationOptions;
 
 

@@ -21,7 +21,7 @@
             currentBook = [[ARFLibrary sharedLibrary] bookForTag:currentTag atIndex:indexPath.row];
         }
         else{
-            currentBook = [[ARFLibrary sharedLibrary] favoriteBooks][indexPath.row];
+            currentBook = [[ARFLibrary sharedLibrary] getFavoriteBooks][indexPath.row];
         }
         
         [cell.lblTitle setText:currentBook.title];
@@ -44,9 +44,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ARFBook *currentBook;
+    self.selectedIndexPath = indexPath;
     if (![self isSearchDisplayTableView:tableView]) {
-        NSString *currentTag = [[ARFLibrary sharedLibrary] tagForIndex:indexPath.section];
-        currentBook = [[ARFLibrary sharedLibrary] bookForTag:currentTag atIndex:indexPath.row];
+        if (indexPath.section == kFavoritesSection) {
+            currentBook = [[ARFLibrary sharedLibrary] getFavoriteBooks][indexPath.row];
+        }
+        else{
+            NSString *currentTag = [[ARFLibrary sharedLibrary] tagForIndex:indexPath.section-1];
+            currentBook = [[ARFLibrary sharedLibrary] bookForTag:currentTag atIndex:indexPath.row];
+        }
     }
     else{
         currentBook =  [[ARFLibrary sharedLibrary] sortedBooksWithTitle][indexPath.row];
@@ -63,7 +69,7 @@
             return [[ARFLibrary sharedLibrary] bookCountForTag:currentTag];
         }
         else{
-            return [[ARFLibrary sharedLibrary] favoriteBooks].count;
+            return [[ARFLibrary sharedLibrary] getFavoriteBooks].count;
         }
     }
     else

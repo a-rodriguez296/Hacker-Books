@@ -12,10 +12,13 @@
 #import "ARFLibrary.h"
 
 static NSString * const cellIdentifier = @"Cell";
-static const NSUInteger favoritesSection = 0;
+static const NSUInteger kFavoritesSection = 0;
 
 @interface ARFLIbraryViewController : UIViewController <UISearchBarDelegate,UISearchDisplayDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
+
 
 -(NSIndexPath *) indexPathWithSender:(UIView *) view;
 

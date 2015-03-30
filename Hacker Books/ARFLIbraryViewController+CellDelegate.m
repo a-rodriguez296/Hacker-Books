@@ -19,19 +19,20 @@
     
  
     NSIndexPath *indexPath = [self indexPathWithSender:sender];
-    if (indexPath.section == favoritesSection) {
+    if (indexPath.section == kFavoritesSection) {
         
         
-        ARFBook * book = [[ARFLibrary sharedLibrary] favoriteBooks][indexPath.row];
-        [[ARFLibrary sharedLibrary] markBookFromFavoriteList:book];
-        
+        ARFBook * book = [[ARFLibrary sharedLibrary] getFavoriteBooks][indexPath.row];
+        [[ARFLibrary sharedLibrary] markBookFromFavoriteList:book withNotificationOptions:ARFDoesntNeedToBeNotified];
+        [book setIsFavorite:NO];
         [self.tableView reloadData];
         
     }
     else{
         NSString *currentTag = [[ARFLibrary sharedLibrary] tagForIndex:indexPath.section-1];
         ARFBook * book = [[ARFLibrary sharedLibrary] bookForTag:currentTag atIndex:indexPath.row];
-        [[ARFLibrary sharedLibrary] markBookFromAlphList:book];
+        [book setIsFavorite:YES];
+        [[ARFLibrary sharedLibrary] markBookFromAlphList:book withNotificationOptions:ARFDoesntNeedToBeNotified];
         
         NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
         [indexSet addIndex:0];

@@ -12,10 +12,7 @@
 @interface ARFBookViewController : UIViewController
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgBook;
-@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
-@property (weak, nonatomic) IBOutlet UILabel *lblAuthors;
-@property (weak, nonatomic) IBOutlet UIButton *btnFavorite;
+
 
 
 -(id) initWithBook:(ARFBook *) book;

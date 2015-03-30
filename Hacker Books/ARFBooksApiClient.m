@@ -23,8 +23,11 @@
     [manager GET:stURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSMutableArray * responseArray = [NSMutableArray new];
-        
+        NSLog(@"%@", NSStringFromClass([responseObject class]));
         NSError *errorJson;
+        
+//        [self saveJSONInSandboxWithData:responseObject];
+        
         NSArray* objectsArray = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&errorJson];
         
         for (NSDictionary *bookDictionary in objectsArray) {
@@ -39,5 +42,27 @@
         NSLog(@"Error: %@", error);
     }];
 }
+
+
+
+
+//+(void) saveJSONInSandboxWithData:(NSData *) data{
+//    
+//    NSFileManager *fm = [NSFileManager defaultManager];
+//    NSURL *baseUrl = [[fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+//    
+//    NSURL *jsonURL = [NSURL URLWithString:@"json.txt" relativeToURL:baseUrl];
+//    NSString *stJsonURL = [jsonURL absoluteString];
+//    if (![fm fileExistsAtPath:stJsonURL]) {
+//        BOOL a = [fm createFileAtPath:stJsonURL contents:data attributes:nil];
+//        NSLog(@"%i",a);
+//    }
+//   
+//    
+//    NSError *error;
+////    BOOL didSave = [data writeToFile:  options:NSDataWritingAtomic error:&error];
+//    
+//    
+//}
 
 @end

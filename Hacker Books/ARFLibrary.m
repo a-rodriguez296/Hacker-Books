@@ -8,7 +8,7 @@
 
 #import "ARFLibrary.h"
 #import "ARFBooksApiClient.h"
-#import "ARFConstants.h"
+
 
 
 @interface ARFLibrary()
@@ -21,7 +21,7 @@
 @property (nonatomic, strong) NSArray *sortedBooks;
 
 
-@property (nonatomic, strong) NSMutableArray *favoriteBooksa;
+@property (nonatomic, strong) NSMutableArray *favoriteBooks;
 
 @end
 
@@ -129,34 +129,40 @@
     return self.sortedBooks;
 }
 
--(NSArray *) favoriteBooks{
+-(NSArray *) getFavoriteBooks{
     
-    if (self.favoriteBooksa == nil) {
+    if (self.favoriteBooks == nil) {
         NSMutableArray *responseArray = [NSMutableArray new];
         for (ARFBook *currentBook in self.tagListbooks) {
             if ([currentBook isFavorite]) {
                 [responseArray addObject:currentBook];
             }
         }
-        self.favoriteBooksa =responseArray;
+        self.favoriteBooks =responseArray;
         return responseArray;
     }
     else{
-        return self.favoriteBooksa;
+        return self.favoriteBooks;
     }
 }
 
 
 
--(void) markBookFromAlphList:(ARFBook *) book{
+-(void) markBookFromAlphList:(ARFBook *) book withNotificationOptions:(ARFNotificationOptions) option{
     
-    [self.favoriteBooksa addObject:book];
+    [self.favoriteBooks addObject:book];
     [self.tagListbooks removeObject:book];
+    if (option == ARFNeedsToBeNotified) {
+        [self sendDidMarkBookNotificationWithBook:book];
+    }
 }
 
--(void) markBookFromFavoriteList:(ARFBook *) book{
-    [self.favoriteBooksa removeObject:book];
+-(void) markBookFromFavoriteList:(ARFBook *) book withNotificationOptions:(ARFNotificationOptions) option{
+    [self.favoriteBooks removeObject:book];
     [self.tagListbooks addObject:book];
+    if (option == ARFNeedsToBeNotified) {
+        [self sendDidMarkBookNotificationWithBook:book];
+    }
 }
 
 
@@ -167,6 +173,10 @@
             [anArray addObject:currentElement];
         }
     }
+}
+
+-(void) sendDidMarkBookNotificationWithBook:(ARFBook *) book{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDidMarkBookNotification object:self userInfo:@{@"book":book}];
 }
 
 @end

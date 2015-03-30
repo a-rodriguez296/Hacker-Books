@@ -180,6 +180,7 @@
 		35BA7F301AC25D9E00BE56AC /* Hacker Books */ = {
 			isa = PBXGroup;
 			children = (
+				9C07A6691AC8AF0200982A41 /* Protocols */,
 				35BA7F5A1AC2626100BE56AC /* Utils */,
 				35BA7F5E1AC2646300BE56AC /* Network */,
 				35BA7F541AC25DE400BE56AC /* Data */,
@@ -243,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				35BA7F591AC2620F00BE56AC /* ARFConstants.h */,
-				3572B6C11AC3BBB70035DC63 /* ARFCellDelegate.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -263,6 +263,14 @@
 				D530F298614CBB44724B86AF /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C07A6691AC8AF0200982A41 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3572B6C11AC3BBB70035DC63 /* ARFCellDelegate.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		9C1E89E31AC4BA83002B8AA3 /* Table View Delegate */ = {

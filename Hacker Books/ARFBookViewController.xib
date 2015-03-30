@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -10,38 +10,43 @@
                 <outlet property="btnFavorite" destination="Laz-wd-Irk" id="N4T-7q-IVu"/>
                 <outlet property="imgBook" destination="WEL-hq-FS6" id="ssF-1q-jZd"/>
                 <outlet property="lblAuthors" destination="m9h-g1-QDN" id="uj4-X5-zC8"/>
+                <outlet property="lblTaglist" destination="v2L-G8-cTp" id="XuW-XD-Xty"/>
                 <outlet property="lblTitle" destination="h0j-T2-iGz" id="1Le-2b-EQ1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WEL-hq-FS6">
-                    <rect key="frame" x="8" y="34" width="175" height="228"/>
+                    <rect key="frame" x="8" y="34" width="137" height="179"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="175" id="V8j-Nf-j7M">
-                            <variation key="heightClass=regular" constant="154"/>
-                        </constraint>
-                        <constraint firstAttribute="width" secondItem="WEL-hq-FS6" secondAttribute="height" multiplier="175:228" id="lJw-Oz-DOw"/>
+                        <constraint firstAttribute="width" secondItem="WEL-hq-FS6" secondAttribute="height" multiplier="137:179" id="1Kq-nU-zCs"/>
+                        <constraint firstAttribute="width" constant="137" id="FsS-ir-69i"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0j-T2-iGz">
-                    <rect key="frame" x="215" y="61" width="44" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0j-T2-iGz" userLabel="Title ">
+                    <rect key="frame" x="214" y="113" width="44" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9h-g1-QDN">
-                    <rect key="frame" x="215" y="204" width="40" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9h-g1-QDN" userLabel="Authors">
+                    <rect key="frame" x="8" y="244" width="40" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2L-G8-cTp" userLabel="Tag list">
+                    <rect key="frame" x="8" y="273" width="40" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Laz-wd-Irk">
-                    <rect key="frame" x="536" y="133" width="56" height="30"/>
+                    <rect key="frame" x="8" y="326" width="56" height="30"/>
                     <state key="normal" title="Favorite">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -49,23 +54,37 @@
                         <action selector="onTouchFavorite:" destination="-1" eventType="touchUpInside" id="mbb-E1-X2F"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBd-mY-Ohy">
+                    <rect key="frame" x="8" y="364" width="66" height="30"/>
+                    <state key="normal" title="View PDF">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="viewPDF:" destination="-1" eventType="touchUpInside" id="6mT-yt-zIc"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="WEL-hq-FS6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="CG3-Cv-Kqx"/>
-                <constraint firstItem="h0j-T2-iGz" firstAttribute="leading" secondItem="WEL-hq-FS6" secondAttribute="trailing" constant="32" id="LHa-Qe-V9f">
-                    <variation key="heightClass=regular" constant="53"/>
-                </constraint>
-                <constraint firstAttribute="trailing" secondItem="Laz-wd-Irk" secondAttribute="trailing" constant="8" id="M68-Wp-DPp"/>
-                <constraint firstItem="m9h-g1-QDN" firstAttribute="leading" secondItem="h0j-T2-iGz" secondAttribute="leading" id="Vs8-Le-dEL"/>
-                <constraint firstItem="WEL-hq-FS6" firstAttribute="top" secondItem="h0j-T2-iGz" secondAttribute="bottom" constant="-48" id="WsN-A8-uIN"/>
-                <constraint firstItem="WEL-hq-FS6" firstAttribute="centerY" secondItem="Laz-wd-Irk" secondAttribute="centerY" id="cKO-6P-GQM">
-                    <variation key="heightClass=regular" constant="-13.5"/>
-                </constraint>
-                <constraint firstItem="WEL-hq-FS6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="34" id="uDm-1m-YlU"/>
-                <constraint firstItem="m9h-g1-QDN" firstAttribute="top" secondItem="h0j-T2-iGz" secondAttribute="bottom" constant="122" id="yI6-gj-oQS"/>
+                <constraint firstItem="YBd-mY-Ohy" firstAttribute="top" secondItem="Laz-wd-Irk" secondAttribute="bottom" constant="8" id="JQ2-xE-onB"/>
+                <constraint firstItem="m9h-g1-QDN" firstAttribute="top" secondItem="WEL-hq-FS6" secondAttribute="bottom" constant="31" id="Lhd-mm-WrV"/>
+                <constraint firstItem="WEL-hq-FS6" firstAttribute="leading" secondItem="m9h-g1-QDN" secondAttribute="leading" id="MQe-5C-NyG"/>
+                <constraint firstItem="Laz-wd-Irk" firstAttribute="leading" secondItem="v2L-G8-cTp" secondAttribute="leading" id="TXc-zc-Flx"/>
+                <constraint firstItem="v2L-G8-cTp" firstAttribute="top" secondItem="m9h-g1-QDN" secondAttribute="bottom" constant="8" id="eKN-i4-Whi"/>
+                <constraint firstItem="WEL-hq-FS6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="fa0-8l-b2d"/>
+                <constraint firstItem="h0j-T2-iGz" firstAttribute="leading" secondItem="WEL-hq-FS6" secondAttribute="trailing" constant="69" id="h4c-nd-Dsk"/>
+                <constraint firstItem="m9h-g1-QDN" firstAttribute="leading" secondItem="v2L-G8-cTp" secondAttribute="leading" id="h5i-bU-YGu"/>
+                <constraint firstItem="h0j-T2-iGz" firstAttribute="centerY" secondItem="WEL-hq-FS6" secondAttribute="centerY" id="qwW-p7-V5q"/>
+                <constraint firstItem="Laz-wd-Irk" firstAttribute="leading" secondItem="YBd-mY-Ohy" secondAttribute="leading" id="vDW-HP-bb5"/>
+                <constraint firstItem="WEL-hq-FS6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="34" id="w94-Ql-duH"/>
+                <constraint firstItem="Laz-wd-Irk" firstAttribute="top" secondItem="v2L-G8-cTp" secondAttribute="bottom" constant="32" id="zhq-Sz-NAu"/>
             </constraints>
-            <point key="canvasLocation" x="1639" y="640"/>
+            <point key="canvasLocation" x="1303" y="592"/>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

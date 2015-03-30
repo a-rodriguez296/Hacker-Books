@@ -7,8 +7,16 @@
 //
 
 #import "ARFBookViewController.h"
+#import "ARFLibrary.h"
 
 @interface ARFBookViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgBook;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblAuthors;
+@property (weak, nonatomic) IBOutlet UILabel *lblTaglist;
+@property (weak, nonatomic) IBOutlet UIButton *btnFavorite;
+
 
 @property (nonatomic, strong) ARFBook *book;
 
@@ -35,6 +43,7 @@
     
     [self.lblTitle setText:self.book.title];
     [self.lblAuthors setText:[self.book.authorsList componentsJoinedByString:@","]];
+    [self.lblTaglist setText:[self.book.tagsList componentsJoinedByString:@","]];
     [self.btnFavorite setSelected:self.book.isFavorite];
 }
 
@@ -53,6 +62,23 @@
 }
 */
 - (IBAction)onTouchFavorite:(id)sender {
-}
+    
+    //Cambiar estado de la variable del libro
+    [self.book setIsFavorite:!self.book.isFavorite];
+    
+    
+    //Comunicar cambio de estado al modelo
+    if (self.book.isFavorite) {
+        [[ARFLibrary sharedLibrary] markBookFromAlphList:self.book withNotificationOptions:ARFNeedsToBeNotified];
+    }
+    else{
+        [[ARFLibrary sharedLibrary] markBookFromFavoriteList:self.book withNotificationOptions:ARFNeedsToBeNotified];
+    }
 
+    [sender setSelected:self.book.isFavorite];
+    
+    }
+
+- (IBAction)viewPDF:(id)sender {
+}
 @end
