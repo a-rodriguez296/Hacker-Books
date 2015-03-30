@@ -7,7 +7,6 @@
 //
 
 #import "ARFBookCell.h"
-
 @implementation ARFBookCell
 
 - (void)awakeFromNib {

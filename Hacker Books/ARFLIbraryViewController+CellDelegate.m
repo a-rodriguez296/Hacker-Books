@@ -24,28 +24,19 @@
         
         ARFBook * book = [[ARFLibrary sharedLibrary] getFavoriteBooks][indexPath.row];
         [[ARFLibrary sharedLibrary] markBookFromFavoriteList:book withNotificationOptions:ARFDoesntNeedToBeNotified];
-        [book setIsFavorite:NO];
         [self.tableView reloadData];
         
     }
     else{
         NSString *currentTag = [[ARFLibrary sharedLibrary] tagForIndex:indexPath.section-1];
         ARFBook * book = [[ARFLibrary sharedLibrary] bookForTag:currentTag atIndex:indexPath.row];
-        [book setIsFavorite:YES];
+
         [[ARFLibrary sharedLibrary] markBookFromAlphList:book withNotificationOptions:ARFDoesntNeedToBeNotified];
-        
         NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
         [indexSet addIndex:0];
         [indexSet addIndex:indexPath.section];
-//        [self.tableView beginUpdates];
-//        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-//        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationAutomatic];
-//        [self.tableView endUpdates];
-        
+
         [self.tableView reloadData];
-        
-        
-        
     }
     
 }

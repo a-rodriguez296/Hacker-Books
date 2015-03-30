@@ -7,7 +7,7 @@
 //
 
 #import "ARFLIbraryViewController.h"
-#import "ARFCellDelegate.h"
+@class ARFCellDelegate;
 
 @interface ARFLIbraryViewController (CellDelegate) <ARFCellDelegate>
 

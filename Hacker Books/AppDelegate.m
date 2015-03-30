@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ARFLibrary.h"
 #import "ARFLIbraryViewController.h"
+#import "ARFBookViewController.h"
+#import "ARFLoadingViewController.h"
 
 
 @interface AppDelegate ()
@@ -22,14 +24,35 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     
+    //Sacar la inicialización de la librería acá.
+    //Sacar un libro
+    //Si hay favorites sacar el primero. De lo contrario sacar de la otra lista el primero. 
+    //
     
-
-
-    ARFLIbraryViewController *libraryVC = [[ARFLIbraryViewController alloc] initWithNibName:NSStringFromClass([ARFLIbraryViewController class]) bundle:nil];
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:libraryVC];
-    self.window.rootViewController = navVC;
+//    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+//    {
+//        
+//        ARFLIbraryViewController *libraryVC = [[ARFLIbraryViewController alloc] initWithNibName:NSStringFromClass([ARFLIbraryViewController class]) bundle:nil];
+//        UINavigationController *navTable = [[UINavigationController alloc] initWithRootViewController:libraryVC];
+//        ARFBookViewController *bookVC = [[ARFBookViewController alloc] init];
+//        UINavigationController *navBook = [[UINavigationController alloc] initWithRootViewController:bookVC];
+//        UISplitViewController *splitView = [UISplitViewController new];
+//        splitView.viewControllers = @[libraryVC, navBook];
+//        [splitView setDelegate:bookVC];
+//        self.window.rootViewController = splitView;
+//        
+//    }
+//    else{
+//        ARFLIbraryViewController *libraryVC = [[ARFLIbraryViewController alloc] initWithNibName:NSStringFromClass([ARFLIbraryViewController class]) bundle:nil];
+//        UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:libraryVC];
+//        self.window.rootViewController = navVC;
+//
+//    }
     
     
+    ARFLoadingViewController *loadingVC = [ARFLoadingViewController new];
+    
+    self.window.rootViewController = loadingVC;
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

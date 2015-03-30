@@ -22,9 +22,11 @@
 		35BA7F531AC25DDC00BE56AC /* ARFBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BA7F521AC25DDC00BE56AC /* ARFBook.m */; };
 		35BA7F571AC25E9E00BE56AC /* ARFLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BA7F561AC25E9E00BE56AC /* ARFLibrary.m */; };
 		35BA7F5D1AC2645900BE56AC /* ARFBooksApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BA7F5C1AC2645900BE56AC /* ARFBooksApiClient.m */; };
+		9C0347D81ACA5E62007B6920 /* ARFSerializerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0347D71ACA5E62007B6920 /* ARFSerializerUtils.m */; };
 		9C1E89E21AC4BA77002B8AA3 /* ARFLIbraryViewController+TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E89E11AC4BA77002B8AA3 /* ARFLIbraryViewController+TableView.m */; };
-		9C1E89E91AC4BCE2002B8AA3 /* ARFLIbraryViewController+SearchDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E89E81AC4BCE2002B8AA3 /* ARFLIbraryViewController+SearchDisplay.m */; };
 		9C1E89ED1AC4BD22002B8AA3 /* ARFLIbraryViewController+CellDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E89EC1AC4BD22002B8AA3 /* ARFLIbraryViewController+CellDelegate.m */; };
+		9C228A391ACCDFB200BCF6DB /* ARFLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C228A371ACCDFB200BCF6DB /* ARFLoadingViewController.m */; };
+		9C228A3A1ACCDFB200BCF6DB /* ARFLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C228A381ACCDFB200BCF6DB /* ARFLoadingViewController.xib */; };
 		B4B11F85A52893CDE63C1751 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D530F298614CBB44724B86AF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -69,12 +71,15 @@
 		35BA7F5B1AC2645900BE56AC /* ARFBooksApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARFBooksApiClient.h; sourceTree = "<group>"; };
 		35BA7F5C1AC2645900BE56AC /* ARFBooksApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARFBooksApiClient.m; sourceTree = "<group>"; };
 		5CBB9A60F0428F2AF449E6DD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9C0347D61ACA5E62007B6920 /* ARFSerializerUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARFSerializerUtils.h; sourceTree = "<group>"; };
+		9C0347D71ACA5E62007B6920 /* ARFSerializerUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARFSerializerUtils.m; sourceTree = "<group>"; };
 		9C1E89E01AC4BA77002B8AA3 /* ARFLIbraryViewController+TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ARFLIbraryViewController+TableView.h"; sourceTree = "<group>"; };
 		9C1E89E11AC4BA77002B8AA3 /* ARFLIbraryViewController+TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ARFLIbraryViewController+TableView.m"; sourceTree = "<group>"; };
-		9C1E89E71AC4BCE2002B8AA3 /* ARFLIbraryViewController+SearchDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ARFLIbraryViewController+SearchDisplay.h"; path = "Images.xcassets/ARFLIbraryViewController+SearchDisplay.h"; sourceTree = "<group>"; };
-		9C1E89E81AC4BCE2002B8AA3 /* ARFLIbraryViewController+SearchDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ARFLIbraryViewController+SearchDisplay.m"; path = "Images.xcassets/ARFLIbraryViewController+SearchDisplay.m"; sourceTree = "<group>"; };
 		9C1E89EB1AC4BD22002B8AA3 /* ARFLIbraryViewController+CellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ARFLIbraryViewController+CellDelegate.h"; sourceTree = "<group>"; };
 		9C1E89EC1AC4BD22002B8AA3 /* ARFLIbraryViewController+CellDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ARFLIbraryViewController+CellDelegate.m"; sourceTree = "<group>"; };
+		9C228A361ACCDFB200BCF6DB /* ARFLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARFLoadingViewController.h; sourceTree = "<group>"; };
+		9C228A371ACCDFB200BCF6DB /* ARFLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARFLoadingViewController.m; sourceTree = "<group>"; };
+		9C228A381ACCDFB200BCF6DB /* ARFLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARFLoadingViewController.xib; sourceTree = "<group>"; };
 		D530F298614CBB44724B86AF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9925D88712C46A15C7EAF2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +126,7 @@
 			children = (
 				3572B6C01AC3B12E0035DC63 /* Book */,
 				3572B6B41AC37A9B0035DC63 /* Library */,
+				9C228A3B1ACEF0A100BCF6DB /* Loading */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -244,6 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				35BA7F591AC2620F00BE56AC /* ARFConstants.h */,
+				9C0347D61ACA5E62007B6920 /* ARFSerializerUtils.h */,
+				9C0347D71ACA5E62007B6920 /* ARFSerializerUtils.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -282,15 +290,6 @@
 			name = "Table View Delegate";
 			sourceTree = "<group>";
 		};
-		9C1E89EA1AC4BCEF002B8AA3 /* Search Display Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				9C1E89E71AC4BCE2002B8AA3 /* ARFLIbraryViewController+SearchDisplay.h */,
-				9C1E89E81AC4BCE2002B8AA3 /* ARFLIbraryViewController+SearchDisplay.m */,
-			);
-			name = "Search Display Delegate";
-			sourceTree = "<group>";
-		};
 		9C1E89EE1AC4BD2E002B8AA3 /* Cell Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,10 +303,19 @@
 			isa = PBXGroup;
 			children = (
 				9C1E89E31AC4BA83002B8AA3 /* Table View Delegate */,
-				9C1E89EA1AC4BCEF002B8AA3 /* Search Display Delegate */,
 				9C1E89EE1AC4BD2E002B8AA3 /* Cell Delegate */,
 			);
 			name = "Delegate's Categories";
+			sourceTree = "<group>";
+		};
+		9C228A3B1ACEF0A100BCF6DB /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				9C228A361ACCDFB200BCF6DB /* ARFLoadingViewController.h */,
+				9C228A371ACCDFB200BCF6DB /* ARFLoadingViewController.m */,
+				9C228A381ACCDFB200BCF6DB /* ARFLoadingViewController.xib */,
+			);
+			name = Loading;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +403,7 @@
 				3572B6B91AC37CDA0035DC63 /* ARFBookCell.xib in Resources */,
 				3572B6B21AC37A7E0035DC63 /* ARFLIbraryViewController.xib in Resources */,
 				35BA7F3C1AC25D9E00BE56AC /* LaunchScreen.xib in Resources */,
+				9C228A3A1ACCDFB200BCF6DB /* ARFLoadingViewController.xib in Resources */,
 				35BA7F391AC25D9E00BE56AC /* Images.xcassets in Resources */,
 				3572B6BF1AC3B1250035DC63 /* ARFBookViewController.xib in Resources */,
 			);
@@ -449,14 +458,15 @@
 			files = (
 				3572B6B11AC37A7E0035DC63 /* ARFLIbraryViewController.m in Sources */,
 				9C1E89ED1AC4BD22002B8AA3 /* ARFLIbraryViewController+CellDelegate.m in Sources */,
+				9C228A391ACCDFB200BCF6DB /* ARFLoadingViewController.m in Sources */,
 				3572B6BE1AC3B1250035DC63 /* ARFBookViewController.m in Sources */,
 				35BA7F531AC25DDC00BE56AC /* ARFBook.m in Sources */,
 				35BA7F571AC25E9E00BE56AC /* ARFLibrary.m in Sources */,
 				9C1E89E21AC4BA77002B8AA3 /* ARFLIbraryViewController+TableView.m in Sources */,
 				35BA7F371AC25D9E00BE56AC /* AppDelegate.m in Sources */,
+				9C0347D81ACA5E62007B6920 /* ARFSerializerUtils.m in Sources */,
 				3572B6B81AC37CDA0035DC63 /* ARFBookCell.m in Sources */,
 				35BA7F341AC25D9E00BE56AC /* main.m in Sources */,
-				9C1E89E91AC4BCE2002B8AA3 /* ARFLIbraryViewController+SearchDisplay.m in Sources */,
 				3572B6AC1AC336750035DC63 /* ARFBook+Parse.m in Sources */,
 				35BA7F5D1AC2645900BE56AC /* ARFBooksApiClient.m in Sources */,
 			);

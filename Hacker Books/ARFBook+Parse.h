@@ -7,6 +7,10 @@
 //
 
 #import "ARFBook.h"
+@class ARFBooksApiClient;
+@class  AFHTTPRequestOperationManager;
+
+
 
 @interface ARFBook (Parse)
 

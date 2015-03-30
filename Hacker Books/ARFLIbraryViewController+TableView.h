@@ -8,6 +8,7 @@
 
 #import "ARFLIbraryViewController.h"
 
-@interface ARFLIbraryViewController (TableView)
+
+@interface ARFLIbraryViewController (TableView) 
 
 @end

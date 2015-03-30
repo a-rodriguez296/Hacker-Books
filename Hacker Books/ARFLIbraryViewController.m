@@ -7,6 +7,8 @@
 //
 
 #import "ARFLIbraryViewController.h"
+#import "ARFSerializerUtils.h"
+#import "ARFBookViewController.h"
 
 @interface ARFLIbraryViewController ()
 
@@ -22,19 +24,25 @@
     
     [self setTitle:@"Hacker Library"];
     
-    
-    [[ARFLibrary sharedLibrary] donwloadBooksWithSuccess:^(NSArray *books) {
-        [self.tableView reloadData];
-    } failure:^(NSString *error) {
-        //Caso de error
-    }];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
     
 
+    _ME_WEAK
+    if ([fileManager fileExistsAtPath:[ARFSerializerUtils pathForBooks]]){
+        [[ARFLibrary sharedLibrary] decodeBooks];
+        [me.tableView reloadData];
+    }
+    else{
+        [[ARFLibrary sharedLibrary] donwloadBooksWithSuccess:^(BOOL success) {
+            if (success) {
+                [me.tableView reloadData];
+            }
+        }];
+    }
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ARFBookCell class]) bundle:nil] forCellReuseIdentifier:cellIdentifier];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didMarkBook:) name:kDidMarkBookNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didMarkBook:) name:kDidMarkBookAsFavoriteNotification object:nil];
 }
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -53,35 +61,24 @@
     return nil;
 }
 
--(void) didMarkBook:(NSNotification *) notification{
-    
-    NSDictionary *userInfo = notification.userInfo;
-    ARFBook * book = [userInfo objectForKey:@"book"];
-    
-    
-    //Logica:
-    //Solamente hay q hacer cambios en el caso en el que el libro quede en un estado (favorite o !favorite) diferente del que salió en cellDidSelect...
-    //El estado en el que salió se puede deducir del indexPath.section q esta guardado en la variable self.selectedIndexPath
-    if (book.isFavorite && self.selectedIndexPath.section != kFavoritesSection) {
-        
-        //Ir a la seccion q tengo guardada en el indexpath
-        
-        [self.tableView beginUpdates];
-        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-//        [self.tableView deleteRowsAtIndexPaths:@[self.selectedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        
-        [self.tableView endUpdates];
 
-    }
-    else if(!book.isFavorite && self.selectedIndexPath.section == kFavoritesSection){
-        
-    }
+
+#pragma mark ARFLibraryViewControllerDelegate
+-(void) libraryViewController:(ARFLIbraryViewController *) libraryVC didSelectBook:(ARFBook *) book{
     
-//    [self.tableView reloadData];
-    
+    ARFBookViewController *bookVC = [[ARFBookViewController alloc] initWithBook:book];
+    [self.navigationController pushViewController:bookVC animated:YES];
 }
 
 
+
+
+
+
+#pragma mark Notifications
+-(void) didMarkBook:(NSNotification *) notification{
+    [self.tableView reloadData];
+}
 
 
 -(void)dealloc{

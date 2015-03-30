@@ -11,10 +11,38 @@
 #import "ARFBookCell.h"
 #import "ARFLibrary.h"
 
+@class ARFSerializerUtils;
+@class ARFBookViewController;
+
 static NSString * const cellIdentifier = @"Cell";
 static const NSUInteger kFavoritesSection = 0;
 
-@interface ARFLIbraryViewController : UIViewController <UISearchBarDelegate,UISearchDisplayDelegate>
+
+
+@class ARFLIbraryViewController;
+
+
+
+@protocol ARFLibraryViewControllerDelegate <NSObject>
+
+//Si lo implemento yo, hay que hacer push.
+//Si lo implementa el hijo, solo hay q hacer sync model.
+
+
+@required
+-(void) libraryViewController:(ARFLIbraryViewController *) libraryVC didSelectBook:(ARFBook *) book;
+
+
+
+@end
+
+
+@interface ARFLIbraryViewController : UIViewController  <ARFLibraryViewControllerDelegate>
+
+
+@property(weak, nonatomic) id<ARFLibraryViewControllerDelegate> delegate;
+
+
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;

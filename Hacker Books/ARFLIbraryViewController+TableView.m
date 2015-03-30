@@ -7,7 +7,6 @@
 //
 
 #import "ARFLIbraryViewController+TableView.h"
-#import "ARFBookViewController.h"
 #import "ARFLIbraryViewController+CellDelegate.h"
 
 @implementation ARFLIbraryViewController (TableView)
@@ -15,7 +14,6 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ARFBookCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     ARFBook * currentBook;
-    if (![self isSearchDisplayTableView:tableView]) {
         if (indexPath.section>0) {
             NSString *currentTag = [[ARFLibrary sharedLibrary] tagForIndex:indexPath.section-1];
             currentBook = [[ARFLibrary sharedLibrary] bookForTag:currentTag atIndex:indexPath.row];
@@ -29,23 +27,12 @@
         [cell.btnFavorite setSelected:currentBook.isFavorite];
         [cell setDelegate:self];
         return cell;
-    }
-    else{
-        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([self class])];
-        currentBook = [[ARFLibrary sharedLibrary] sortedBooksWithTitle][indexPath.row];
-        if (!cell)
-        {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([self class])];
-        }
-        [cell.textLabel setText:currentBook.title];
-        return cell;
-    }
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ARFBook *currentBook;
     self.selectedIndexPath = indexPath;
-    if (![self isSearchDisplayTableView:tableView]) {
         if (indexPath.section == kFavoritesSection) {
             currentBook = [[ARFLibrary sharedLibrary] getFavoriteBooks][indexPath.row];
         }
@@ -53,17 +40,13 @@
             NSString *currentTag = [[ARFLibrary sharedLibrary] tagForIndex:indexPath.section-1];
             currentBook = [[ARFLibrary sharedLibrary] bookForTag:currentTag atIndex:indexPath.row];
         }
-    }
-    else{
-        currentBook =  [[ARFLibrary sharedLibrary] sortedBooksWithTitle][indexPath.row];
-    }
     
-    ARFBookViewController *bookVC = [[ARFBookViewController alloc] initWithBook:currentBook];
-    [self.navigationController pushViewController:bookVC animated:YES];
+
+    //Llamar al delegado
+    [self.delegate libraryViewController:self didSelectBook:currentBook];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (![self isSearchDisplayTableView:tableView]) {
         if (section>0) {
             NSString *currentTag = [[ARFLibrary sharedLibrary] tagForIndex:section-1];
             return [[ARFLibrary sharedLibrary] bookCountForTag:currentTag];
@@ -71,23 +54,16 @@
         else{
             return [[ARFLibrary sharedLibrary] getFavoriteBooks].count;
         }
-    }
-    else
-        return  [[ARFLibrary sharedLibrary] sortedBooksWithTitle].count;
+    
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (![self isSearchDisplayTableView:tableView]) {
         if (section>0) {
             NSArray *sortedArray = [[ARFLibrary sharedLibrary] tags];
             return sortedArray[section-1];
         }
         else
             return @"Favorites";
-    }
-    else{
-        return @"";
-    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -95,18 +71,8 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    if (![self isSearchDisplayTableView:tableView]) {
         NSUInteger tags =[[ARFLibrary sharedLibrary] tags].count;
         return tags+1;
-    }
-    else
-        return 1;
 }
 
-
-#pragma mark Aux Methods
-
--(BOOL) isSearchDisplayTableView:(UITableView *) tableView{
-    return ![tableView isEqual:self.tableView];
-}
 @end

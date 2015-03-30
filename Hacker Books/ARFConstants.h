@@ -7,7 +7,11 @@
 //
 
 static NSString* const kBooksUrl                      = @"https://keepcodigtest.blob.core.windows.net/containerblobstest/books_readable.json";
-static NSString *const kDidMarkBookNotification = @"didMarkBook";
+static NSString *const kDidMarkBookAsFavoriteNotification = @"didMarkBook";
+static NSString *const kDataFileName = @"data.txt";
+
+
+#define _ME_WEAK __weak typeof(self) me = self;
 
 
 typedef enum{

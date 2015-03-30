@@ -7,28 +7,29 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ARFBook.h"
 #import "ARFConstants.h"
+@class ARFBook;
+
 
 @interface ARFLibrary : NSObject
 
 
 +(id)sharedLibrary;
+-(void) decodeBooks;
+-(void) donwloadBooksWithSuccess:(void (^)(BOOL success)) successBlock;
 
--(void) donwloadBooksWithSuccess:(void (^)(NSArray * books))successBlock
-                         failure:(void (^)(NSString *error))failureBlock;
 
--(NSArray *) libraryBooks;
--(NSUInteger) bookCount;
 -(NSArray *) tags;
 -(NSUInteger) bookCountForTag:(NSString *) tag;
 -(NSArray *) booksForTag:(NSString *) tag;
 -(ARFBook *) bookForTag:(NSString *) tag atIndex:(NSUInteger) index;
 -(NSString *) tagForIndex:(NSUInteger) index;
--(NSArray *) searchBooksWithTitle:(NSString *)title;
 -(NSArray *) sortedBooksWithTitle;
 -(NSArray *) getFavoriteBooks;
 -(void) markBookFromFavoriteList:(ARFBook *) book withNotificationOptions:(ARFNotificationOptions) option;
--(void) markBookFromAlphList:(ARFBook *) book withNotificationOptions:(ARFNotificationOptions) option;
+-(void) markBookFromAlphList:(ARFBook *)book withNotificationOptions:(ARFNotificationOptions) option;
 
+
+
+-(ARFBook *) firstBook;
 @end

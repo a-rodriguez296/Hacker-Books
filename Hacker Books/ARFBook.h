@@ -7,15 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+@class  ARFBook;
+@class ARFBooksApiClient;
 
-@interface ARFBook : NSObject
 
-@property (nonatomic, strong) NSString * title;
+@interface ARFBook : NSObject <NSCoding>
+
+@property (nonatomic, copy) NSString * title;
 @property (nonatomic, strong) NSArray * authorsList;
 @property (nonatomic, strong) NSArray *tagsList;
-@property (nonatomic, strong) NSString *urlImage;
-@property (nonatomic, strong) NSString *urlPDF;
-@property (nonatomic, assign) BOOL isFavorite;
+@property (nonatomic, copy) NSString *urlImage;
+@property (nonatomic, copy) NSString *urlPDF;
+@property (nonatomic) BOOL isFavorite;
 
+
++(NSData *) getDataWithstURL:(NSString *) stURL;
++(void) donwloadPDFDataWithBook:(ARFBook *) book
+                        success:(void (^)(BOOL success, NSString * stRelativeUrl))successBlock;
 
 @end
