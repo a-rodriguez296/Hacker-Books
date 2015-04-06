@@ -2,6 +2,7 @@ Práctica iOS Fundamentos
 ===================
 
 
+
 **Respuestas**
 
  1. Métodos similares al método **isKindOfClass**:
