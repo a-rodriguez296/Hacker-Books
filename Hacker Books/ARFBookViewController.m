@@ -90,7 +90,7 @@
 
 - (IBAction)viewPDF:(id)sender {
     
-//    NSString *pdfUrl = self.book.urlPDF;
+//    NSString *pdfUrl = self.book.urlPDFa;
     
     _ME_WEAK
     [self.activityIndicator startAnimating];
